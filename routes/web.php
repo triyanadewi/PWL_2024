@@ -85,3 +85,15 @@ Route::get('/articles/{id}', [ArticleController::class,'articles']);
 Route::resource('photos', PhotoController::class)->only([ 'index', 'show']);
 
 Route::resource('photos', PhotoController::class)->except([ 'create', 'store', 'update', 'destroy']);
+
+// Route::get('/greeting', function () {
+//     return view('hello', ['name' => 'Triyana']);
+// });
+    
+// Perubahan route sebelumnya
+// Route::get('/greeting', function () {
+//     return view('blog.hello', ['name' => 'Andi']);
+// });
+
+// Ubah route /greeting dan arahkan ke WelcomeController pada fungsi greeting
+Route::get('/greeting', [WelcomeController::class, 'greeting']);
